@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.3.3/dist/echarts.min.js"></script>
+</head>
+
+<body>
+    <div id="main" style="width: 600px;height:400px;"></div>
+    <script>
+        var myChart = echarts.init(document.getElementById('main'));
+
+        var option = {
+            title: {
+                text: '全球种子市场份额分布',
+                subtext: '资料来源：前瞻产业研究院',
+                left: 'center'
+            },
+            tooltip: {
+                trigger: 'item'
+            },
+            legend: {
+                orient: 'vertical',
+                left: 'left'
+            },
+            series: [{
+                name: 'Access From',
+                type: 'pie',
+                radius: '50%',
+                data: [{
+                    value: 0.35,
+                    name: '美国'
+                }, {
+                    value: 0.23,
+                    name: '中国'
+                }, {
+                    value: 0.06,
+                    name: '法国'
+                }, {
+                    value: 0.06,
+                    name: '巴西'
+                }, {
+                    value: 0.05,
+                    name: '加拿大'
+                }, {
+                    value: 0.04,
+                    name: '印度'
+                }, {
+                    value: 0.03,
+                    name: '日本'
+                }, {
+                    value: 0.02,
+                    name: '德国'
+                }, {
+                    value: 0.16,
+                    name: '其他'
+                }],
+                emphasis: {
+                    itemStyle: {
+                        shadowBlur: 10,
+                        shadowOffsetX: 0,
+                        shadowColor: 'rgba(0, 0, 0, 0.5)'
+                    }
+                }
+            }]
+        };
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+    </script>
+</body>
+
+</html>
